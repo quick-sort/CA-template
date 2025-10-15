@@ -46,13 +46,14 @@ Use the private key to create a certificate signing request (CSR). The CSR detai
       -new -sha256 -out intermediate/csr/www.example.com.csr.pem
 ```
 
-To create a certificate, use the intermediate CA to sign the CSR. If the certificate is going to be used on a server, use the server_cert extension. If the certificate is going to be used for user authentication, use the usr_cert extension. Certificates are usually given a validity of one year, though a CA will typically give a few days extra for convenience.
+To create a certificate, use the intermediate CA to sign the CSR. If the certificate is going to be used on a **server**, use the `server_cert` extension. If the certificate is going to be used for **user authentication**, use the `usr_cert` extension. Certificates are usually given a validity of one year, though a CA will typically give a few days extra for convenience.
 
 ```
 # openssl ca -config intermediate/openssl.cnf \
       -extensions server_cert -days 375 -notext -md sha256 \
       -in intermediate/csr/www.example.com.csr.pem \
       -out intermediate/certs/www.example.com.cert.pem
+
 # chmod 444 intermediate/certs/www.example.com.cert.pem
 ```
 
