@@ -229,7 +229,7 @@ string_mask         = utf8only
 default_md          = sha256
 
 # Extension to add when the -x509 option is used.
-x509_extensions     = v3_ca
+x509_extensions     = v3_intermediate_ca
 
 [ req_distinguished_name ]
 # See <https://en.wikipedia.org/wiki/Certificate_signing_request>.

@@ -48,6 +48,7 @@ Use the private key to create a certificate signing request (CSR). The CSR detai
 ```
 # openssl req -config intermediate/openssl.cnf \
       -key intermediate/private/www.example.com.key.pem \
+      -addext "subjectAltName=DNS:example.com,DNS:www.example.com,IP:192.168.1.100" \
       -new -sha256 -out intermediate/csr/www.example.com.csr.pem
 ```
 
