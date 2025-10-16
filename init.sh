@@ -44,6 +44,7 @@ cert_opt          = ca_default
 default_days      = 3750
 preserve          = no
 policy            = policy_strict
+copy_extensions   = copyall
 
 [ policy_strict ]
 # The root CA should only sign intermediate certificates that match.
